@@ -1,0 +1,20 @@
+html {}
+
+#main {
+    height: 40em;
+    width: 50em;
+    background-color: red;
+    margin: auto;
+    display: block;
+    padding: 2em;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#newBook {
+    display: block;
+    margin: auto;
+    border-radius
+    box-shadow: ;
+}
+
