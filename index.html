@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>My Library Books</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
@@ -13,11 +13,23 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-      <div id='main'>
-    <button type="button" class="btn btn-primary" id="newBook">New Book</button>
+      <h1>My Library Books</h1>
+    <div id="bookForm">
+      <button type="button" class="btn btn-primary" id="newBook">
+        New Book
+      </button>
+    </div>
+    <div id="booksHeader"></div>
+    <div id="books">
+      <div class='book'>First JavaScript <button type="button" class="btn btn-danger">Delete</button></div>
+      <div class='book'>Eloquent JavaScript<button type="button" class="btn btn-danger">Delete</button></div>
+      <div class='book'>JavaScript: The Definitive Guide<button type="button" class="btn btn-danger">Delete</button></div>
     </div>
     <script src="script.js"></script>
   </body>

@@ -1,20 +1,39 @@
-html {}
+body {
+  padding: 1em;
+}
 
+h1 {
+  display: flex;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5em;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
+}
 #main {
-    height: 40em;
-    width: 50em;
-    background-color: red;
-    margin: auto;
-    display: block;
-    padding: 2em;
-    font-family: 'Roboto', sans-serif;
-
+  display: flex;
+  height: 40em;
+  width: 50em;
+  background-color: red;
+  margin: auto;
+  padding: 2em;
+  font-family: "Roboto", sans-serif;
 }
 
 #newBook {
-    display: block;
-    margin: auto;
-    border-radius
-    box-shadow: ;
+  display: flex;
+  margin: auto;
+  margin-top: 3em;
 }
 
+.book {
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(233, 233, 233);
+  padding: 1em;
+  border-radius: 10px;
+}
+button {
+}
