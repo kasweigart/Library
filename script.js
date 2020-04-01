@@ -7,7 +7,7 @@ function Book(title, author, pages, read) {
     this.read = read
 
     this.info = function() {
-        //return ...
+        return `${title}${author}${pages}${read}`
     }
 }
 
@@ -18,3 +18,21 @@ function addBookToLibrary() {
 function render() {
 
 }
+//CONSTANTS
+const newBookButton = document.querySelector('#newBook');
+const deleteButtons = document.querySelectorAll('#deleteButton');
+
+//EVENT LISTENERS
+function eventListeners() {
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Great!');
+        })
+    })
+
+    newBookButton.addEventListener('click', () => {
+        console.log('Nice!');
+    })
+}
+
+eventListeners();
