@@ -19,17 +19,57 @@
     />
   </head>
   <body>
-      <h1>My Library Books</h1>
+    <h1>My Library Books</h1>
     <div id="bookForm">
-      <button type="button" class="btn btn-primary" id="newBook">
-        New Book
-      </button>
+      <form>
+        <label for="title">Title:</label>
+        <input type="text" id="title" />
+        <label for="author">Author:</label>
+        <input type="text" id="author" />
+        <label for="title">Pages:</label>
+        <input type="text" id="pages" />
+        <input
+          type="submit"
+          value="New Book"
+          id="newBook"
+          class="btn btn-primary"
+        />
+      </form>
     </div>
     <div id="booksHeader"></div>
     <div id="books">
-      <div class='book'>First JavaScript <button id='deleteButton' type="button" class="btn btn-danger">Delete</button></div>
-      <div class='book'>Eloquent JavaScript<button id='deleteButton' type="button" class="btn btn-danger">Delete</button></div>
-      <div class='book'>JavaScript: The Definitive Guide<button id='deleteButton' type="button" class="btn btn-danger">Delete</button></div>
+      <div class="book">
+        Head First JavaScript
+        <div class='author'>Michael Morrison</div>
+        <div class='pages'>704</div>
+        <button id="deleteButton" type="button" class="btn btn-danger">
+          Delete
+        </button>
+      </div>
+      <div class="book">
+        Eloquent JavaScript
+        <div class='author'>Marijn Haverbeke</div>
+        <div class='pages'>227</div>
+        <button
+          id="deleteButton"
+          type="button"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+      <div class="book">
+        JavaScript: The Definitive Guide
+        <div class='author'>David Flanagan</div>
+        <div class='pages'>1096</div>
+        <button
+          id="deleteButton"
+          type="button"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
