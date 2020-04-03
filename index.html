@@ -28,6 +28,9 @@
         <input type="text" id="author" />
         <label for="title">Pages:</label>
         <input type="text" id="pages" />
+        <label for="read">Finished reading?</label>
+        <input type="checkbox" id='read'>
+        
         <input
           type="submit"
           value="New Book"
@@ -38,7 +41,41 @@
     </div>
     <div id="booksHeader"></div>
     <div id="books">
-      <div class="book">
+      <table class='table'>
+        <thead class='thead-dark'>
+          <tr>
+        <th scope='col'>Title</th>
+        <th scope='col'>Author</th>
+        <th scope='col'>Total Pages</th>
+        <th scope='col'>Progress</th>
+        <th scope='col'>Remove</th>
+        </tr>
+      <tr>
+        <td>Head First JavaScript</td>
+        <td>Michael Morrison</td>
+        <td>704</td>
+        <td><button type="button" class="btn btn-warning" id='readButton'>Unfinished</button></td>
+        <td><button type="button" class="btn btn-danger" id='deleteButton'>Delete</button></td>
+      </tr>
+      <tr>
+        <td>Eloquent JavaScript</td>
+        <td>Marijn Haverbeke</td>
+        <td>227</td>
+        <td><button type="button" class="btn btn-warning" id='readButton'>Unfinished</button></td>
+        <td><button type="button" class="btn btn-danger" id='deleteButton'>Delete</button></td>
+      </tr>
+      <tr>
+        <td>JavaScript: A Definitive Guide</td>
+        <td>David Flanagan</td>
+        <td>1096</td>
+        <td><button type="button" class="btn btn-warning" id='readButton'>Unfinished</button></td>
+        <td><button type="button" class="btn btn-danger" id='deleteButton'>Delete</button></td>
+      </tr>
+      <tbody id='bookDisplay'></tbody>
+      </table>
+
+
+      <!-- <div class="book">
         Head First JavaScript
         <div class='author'>Michael Morrison</div>
         <div class='pages'>704</div>
@@ -68,7 +105,9 @@
           class="btn btn-danger"
         >
           Delete
-        </button>
+        </button> -->
+
+
       </div>
     </div>
     <script src="script.js"></script>

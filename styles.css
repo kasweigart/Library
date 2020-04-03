@@ -1,3 +1,10 @@
+html {
+}
+
+form {
+  margin-bottom: 1em;
+}
+
 body {
   padding: 1em;
 }
@@ -44,6 +51,10 @@ h1 {
 }
 
 #author {
+  margin-right: 1em;
+}
+
+#pages {
   margin-right: 1em;
 }
 
