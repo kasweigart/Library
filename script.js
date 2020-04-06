@@ -5,38 +5,33 @@ const deleteButtons = document.querySelectorAll("#deleteButton");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
-const checkedInput = document.getElementById('read');
-const bookDisplay = document.getElementById("bookDisplay");
-
+const checkedInput = document.getElementById("read");
+const bookDisplay = document.querySelector(".table");
 
 let myLibrary = [];
 
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.target.parentElement.parentElement.remove();
+  });
+});
 
-function eventListeners() {
-    deleteButtons.forEach(button => {
-      button.addEventListener("click", event => {
-        event.target.parentElement.parentElement.remove();
-      });
-    });
-  
-    newBookButton.addEventListener("click", addBookToLibrary);
-  
-    readButton.forEach(button => {
-      button.addEventListener("click", event => {
-        switch (event.target.innerText) {
-          case "Unfinished":
-            event.target.setAttribute("class", "btn btn-success");
-            event.target.innerText = "Finished";
-            break;
-          case "Finished":
-            event.target.setAttribute("class", "btn btn-warning");
-            event.target.innerText = "Unfinished";
-            break;
-        }
-      });
-    });
-  }
+newBookButton.addEventListener("click", addBookToLibrary);
 
+readButton.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    switch (event.target.innerText) {
+      case "Unfinished":
+        event.target.setAttribute("class", "btn btn-success");
+        event.target.innerText = "Finished";
+        break;
+      case "Finished":
+        event.target.setAttribute("class", "btn btn-warning");
+        event.target.innerText = "Unfinished";
+        break;
+    }
+  });
+});
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -44,35 +39,33 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 
-
-  this.info = function() {
+  this.info = function () {
     // return `${title}${author}${pages}${read}`;
   };
 }
 
-
-function addBookToLibrary() {
-  let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, checkedInput.checked);
+function addBookToLibrary(e) {
+  let newBook = new Book(
+    titleInput.value,
+    authorInput.value,
+    pagesInput.value,
+    checkedInput.checked
+  );
   myLibrary.push(newBook);
+  e.preventDefault();
   render(newBook);
 }
 
-
-function render(newBook) {
-  let newDiv = document.createElement("div");
-
+function render(book) {
   let addBook = `<tr>
-    <td>${newBook.title}</td>
-    <td>${newBook.author}</td>
-    <td>${newBook.pages}</td>
+    <td>${book.title}</td>
+    <td>${book.author}</td>
+    <td>${book.pages}</td>
     <td><button type="button" class="btn btn-warning" id='readButton'>Unfinished</button></td>
     <td><button type="button" class="btn btn-danger" id='deleteButton'>Delete</button></td>
   </tr>`;
 
-  newDiv.innerHTML = addBook;
-  bookDisplay.append(newDiv);
+  bookDisplay.innerHTML += addBook;
 }
 
-
-eventListeners();
 
