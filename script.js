@@ -5,33 +5,36 @@ const deleteButtons = document.querySelectorAll("#deleteButton");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
-const checkedInput = document.getElementById("read");
-const bookDisplay = document.querySelector(".table");
+const checkedInput = document.getElementById('read');
+const bookDisplay = document.querySelector('.table');
+
 
 let myLibrary = [];
 
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.target.parentElement.parentElement.remove();
-  });
-});
 
-newBookButton.addEventListener("click", addBookToLibrary);
+function eventListeners() {
+    $('.table').on('click', '#deleteButton', function(event) {
+      event.target.parentElement.parentElement.remove();
+    });
+        
+      
+  
+    newBookButton.addEventListener("click", addBookToLibrary);
+  
+    $('.table').on('click', '#readButton', function(event) {
+      switch (event.target.innerText) {
+        case "Unfinished":
+          event.target.setAttribute("class", "btn btn-success");
+          event.target.innerText = "Finished";
+          break;
+        case "Finished":
+          event.target.setAttribute("class", "btn btn-warning");
+          event.target.innerText = "Unfinished";
+          break;
+      }
+    })
+  }
 
-readButton.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    switch (event.target.innerText) {
-      case "Unfinished":
-        event.target.setAttribute("class", "btn btn-success");
-        event.target.innerText = "Finished";
-        break;
-      case "Finished":
-        event.target.setAttribute("class", "btn btn-warning");
-        event.target.innerText = "Unfinished";
-        break;
-    }
-  });
-});
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -39,22 +42,20 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 
-  this.info = function () {
+
+  this.info = function() {
     // return `${title}${author}${pages}${read}`;
   };
 }
 
+
 function addBookToLibrary(e) {
-  let newBook = new Book(
-    titleInput.value,
-    authorInput.value,
-    pagesInput.value,
-    checkedInput.checked
-  );
+  let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, checkedInput.checked);
   myLibrary.push(newBook);
   e.preventDefault();
   render(newBook);
 }
+
 
 function render(book) {
   let addBook = `<tr>
@@ -68,4 +69,6 @@ function render(book) {
   bookDisplay.innerHTML += addBook;
 }
 
+
+eventListeners();
 
